@@ -1,5 +1,16 @@
 public class Main {
+
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        try {
+            int result = Calculator.divide(10, 1);
+            System.out.println("Результат: " + result);
+        } catch (MyCustomException m) {
+            System.out.println("Перехвачено исключение MyCustomException: " + m.getMessage());
+        } catch (ArithmeticException a) {
+            System.out.println("Перехвачено исключение ArithmeticException: " + a.getMessage());
+        } finally {
+            System.out.println("Финальный блок выполнен!");
+        }
     }
 }
